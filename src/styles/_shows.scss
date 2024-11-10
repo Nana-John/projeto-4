@@ -1,0 +1,84 @@
+@use 'variaveis';
+
+.shows {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    &__list {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr); /* 8 colunas padrão */
+        gap: 15px; /* Espaçamento entre itens */
+        padding: 50px 20px;
+        background-color: #4446ad; /* Fundo suave */
+        list-style: none;
+
+        &__item {
+            overflow: hidden;
+            border-radius: 10px; /* Arredondamento para um visual mais moderno */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05); /* Aumenta o efeito de zoom */
+            }
+
+            /* Estilização das imagens */
+            img {
+                width: 100%; /* Ajusta para preencher o container */
+                height: 100%; /* Preenche o item */
+                object-fit: cover; /* Corta a imagem para caber */
+                filter: brightness(0.9) contrast(1.1); /* Melhora o contraste */
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: brightness(1) contrast(1.2); /* Efeito ao passar o mouse */
+                }
+            }
+        }
+    }
+}
+
+.title {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Responsividade para telas grandes (até 1200px) */
+@media (max-width: 1200px) {
+    .shows__list {
+        grid-template-columns: repeat(6, 1fr); /* Reduz para 6 colunas */
+    }
+
+    .title {
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsividade para tablets (até 768px) */
+@media (max-width: 768px) {
+    .shows__list {
+        grid-template-columns: repeat(4, 1fr); /* Reduz para 4 colunas */
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Responsividade para smartphones (até 576px) */
+@media (max-width: 576px) {
+    .shows__list {
+        grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
+    }
+
+    .title {
+        font-size: 1.25rem;
+        padding: 30px;
+    }
+}

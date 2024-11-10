@@ -1,3 +1,55 @@
-body{
-    background-color: aqua;
+@use 'variaveis';
+@use 'hero';
+@use 'shows';
+@use 'season';
+@use 'awards';
+@use 'footer';
+@use 'header';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:content-box;
+}
+
+body {
+    background-color: variaveis.$corDeFundo;
+
+}
+
+@mixin text($fontSize: 16px){
+    font-size: $fontSize;
+    font-size: $fontSize + 10px;
+    color: variaveis.$corDeTextoPrincipal;
+}
+
+@mixin title($fontSize: 28px){
+    @include text(18px);
+    color: variaveis.$corDeTextoSecundaria;
+}
+
+
+.text--big{
+    @include text(18px);
+}
+
+.text{
+    @include text;
+}
+
+.text--small{
+    @include text(14px);
+}
+
+
+.title--big{
+    @include title(44px);
+}
+
+.title{
+    @include title(40px);
+}
+
+.title--small{
+    @include title(28px);
 }

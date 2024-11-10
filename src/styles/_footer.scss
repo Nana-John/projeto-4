@@ -1,0 +1,75 @@
+@use 'variaveis';
+
+.footer {
+  background-color: #4446ad; // Fundo escuro para contraste moderno
+  color: #f5f5f5; // Texto claro para contraste
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+    padding: 20px;
+    flex-wrap: wrap; // Para ajustar o layout em telas menores
+  }
+
+  &__logo {
+    width: 80px;
+    height: auto;
+    object-fit: contain; // Para manter a proporção da imagem
+  }
+
+  &__address {
+    justify-content: center;
+    text-align: left;
+    font-size: 14px;
+    color: #ccc; // Cor mais clara para contraste
+    line-height: 1.5;
+
+    p {
+      margin: 0;
+    }
+
+    p:first-child {
+      font-weight: bold;
+      color: #ffd700; // Cor dourada para destaque no título
+    }
+  }
+  
+  // Responsividade para telas menores
+  @media (max-width: 768px) {
+    flex-direction: column;
+    text-align: center;
+
+    &__content {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    &__logo {
+      width: 60px; // Reduz o tamanho da logo em telas menores
+      margin-bottom: 10px;
+    }
+
+    &__address {
+      font-size: 13px; // Ajusta a fonte do endereço para telas menores
+    }
+  }
+
+  // Responsividade para dispositivos ainda menores
+  @media (max-width: 480px) {
+    &__logo {
+      width: 50px; // Logo menor em telas pequenas
+    }
+
+    &__address {
+      font-size: 12px; // Fonte menor para endereços em telas muito pequenas
+    }
+  }
+}

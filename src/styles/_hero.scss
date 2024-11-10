@@ -1,0 +1,72 @@
+@use 'variaveis';
+
+/* Estilização do Hero */
+.hero {
+    position: relative;
+    padding: 40px 20px;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(/src/image/hero_desktop.png);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+
+    &__image {
+        max-width: 100%;
+        width: 800px; /* Largura máxima para desktops */
+        height: auto;
+        margin-right: 20px;
+        align-self: center;
+    }
+
+    &__content {
+        flex: 1;
+        max-width: 500px;
+        text-align: center;
+    }
+
+    &__content__text {
+        font-size: 18px;
+        color: #333;
+    }
+}
+
+/* Responsividade para tablets */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        padding: 30px 15px;
+        flex-direction: column;
+    }
+
+    .hero__image {
+        max-width: 70%;
+        margin: 0 auto 20px;
+    }
+
+    .hero__content {
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+/* Responsividade para smartphones */
+@media (max-width: 480px) {
+    .hero {
+        height: auto;
+        padding: 20px 10px;
+        flex-direction: column;
+    }
+
+    .hero__image {
+        max-width: 100%;
+        margin: 0 auto 15px;
+    }
+
+    .hero__content__text {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+}
