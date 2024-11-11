@@ -19,7 +19,7 @@ function styles() {
 function images() {
     return gulp.src('./src/image/**/*')
         .pipe(imagemin())
-        .pipe(gulp.dest('./dist/images'));
+        .pipe(gulp.dest('./dist/image'));
 }
 
 exports.default = gulp.parallel(styles, images, scripts);
