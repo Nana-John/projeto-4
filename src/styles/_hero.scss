@@ -70,3 +70,19 @@
         padding: 0 10px;
     }
 }
+.hero__text {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    color:variaveis.$corDeTextoPrincipal;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 5px;
+    max-width: 300px;
+}
+
+.hero__text::before {
+    font-size: 1.5rem;
+}
